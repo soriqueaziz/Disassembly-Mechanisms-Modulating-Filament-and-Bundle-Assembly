@@ -126,14 +126,14 @@ plot(T1,L*0.004,'LineWidth', 2, 'Color', 'k', 'DisplayName', 'CD The');
 xlim([0 100])
 ylim([0 3])
 xlabel('Time (s)');
-ylabel('Length (monomers)');
+ylabel('Length (micro meter)');
 legend('Location', 'best');
 
 figure(2)
 plot(x*0.004,p1,'-','LineWidth', 2, 'Color', 'b', 'DisplayName', 'LP Sim');
 hold on
 plot(x_theory*0.004, P_theory, 'k-', 'LineWidth', 2, 'DisplayName', 'LP Theory');
-xlabel('Length (monomers)');
+xlabel('Length (micro meter)');
 ylabel('Probability distribution');
 legend('Location', 'best');
 
@@ -150,4 +150,5 @@ xlim([0 10])
 xlabel('Lagtime (s)');
 ylabel('Autocorrelation');
 legend('Location', 'best');
+
 
