@@ -130,9 +130,9 @@ ylabel('Length (micro meter)');
 legend('Location', 'best');
 
 figure(2)
-plot(x*0.004,p1,'-','LineWidth', 2, 'Color', 'b', 'DisplayName', 'LP Sim');
+plot(x*0.004,p1,'-','LineWidth', 2, 'Color', 'b', 'DisplayName', 'CD Sim');
 hold on
-plot(x_theory*0.004, P_theory, 'k-', 'LineWidth', 2, 'DisplayName', 'LP Theory');
+plot(x_theory*0.004, P_theory, 'k-', 'LineWidth', 2, 'DisplayName', 'CD Theory');
 xlabel('Length (micro meter)');
 ylabel('Probability distribution');
 legend('Location', 'best');
@@ -140,15 +140,16 @@ legend('Location', 'best');
 figure(3)
 acf_error = acf_stddev/sqrt(MaxTraj);
 lagtime = lag*hbin; 
-errorbar(lagtime, acf_avg, acf_error,".",'MarkerSize',30,'LineWidth',2, 'Color', 'r', 'DisplayName', 'LP (Simulated Avg \pm SE)');
+errorbar(lagtime, acf_avg, acf_error,".",'MarkerSize',30,'LineWidth',2, 'Color', 'b', 'DisplayName', 'CD (Simulated Avg \pm SE)');
 hold on
 alpha = num*r;
 AC = exp(-alpha.*lagtime);
 lastColor = get(gca, 'ColorOrder');
-plot(lagtime,AC,'LineWidth',2, 'Color', 'r', 'DisplayName', 'LP The');
+plot(lagtime,AC,'LineWidth',2, 'Color', 'k', 'DisplayName', 'CD The');
 xlim([0 10])
 xlabel('Lagtime (s)');
 ylabel('Autocorrelation');
 legend('Location', 'best');
+
 
 
